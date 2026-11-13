@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Producto | Goleada Sport</title>
+  <meta name="description" content="Detalle del producto en Goleada Sport: elige tu talla, revisa la disponibilidad y agrégalo al carrito.">
+  <meta name="theme-color" content="#076B38">
+  <link rel="canonical" href="https://brunoaleman19.github.io/goleada-sport/producto.html">
+  <link rel="icon" type="image/svg+xml" href="img/icono.svg">
+  <link rel="apple-touch-icon" href="img/icono.png">
+  <meta property="og:type" content="product">
+  <meta property="og:locale" content="es_HN">
+  <meta property="og:site_name" content="Goleada Sport">
+  <meta property="og:title" content="Producto | Goleada Sport">
+  <meta property="og:description" content="Fútbol y running en línea, con envíos a todo Honduras.">
+  <meta property="og:image" content="https://brunoaleman19.github.io/goleada-sport/img/banner-inicio.jpg">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body data-pagina="catalogo">
+  <header id="app-header"></header>
+
+  <main id="contenido">
+    <section class="gs-pagina">
+      <div class="container">
+        <nav class="gs-migas" id="migas" aria-label="Ruta de navegación">
+          <ol>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+          </ol>
+        </nav>
+        <div id="detalle"><noscript><p>Activa JavaScript para ver el producto.</p></noscript></div>
+      </div>
+    </section>
+
+    <section class="gs-seccion gs-seccion--neblina" id="seccion-relacionados" hidden aria-labelledby="titulo-relacionados">
+      <div class="container">
+        <div class="gs-cabecera">
+          <h2 id="titulo-relacionados" class="gs-titulo">También te puede gustar</h2>
+          <a class="gs-enlace" href="catalogo.html">Ver todo el catálogo</a>
+        </div>
+        <div class="row row-cols-2 row-cols-lg-4 g-3 g-lg-4" id="relacionados"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="app-footer" class="gs-footer"></footer>
+
+  <script src="js/vendor/bootstrap.bundle.min.js"></script>
+  <script src="data/productos.js"></script>
+  <script src="js/datos.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/componentes.js"></script>
+  <script src="js/producto.js"></script>
+</body>
+</html>

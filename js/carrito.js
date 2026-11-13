@@ -33,8 +33,12 @@ const Carrito = (() => {
     const lineas = leer();
     const linea = buscar(lineas, p.id, t);
     const yaEnCarrito = linea ? linea.cantidad : 0;
-    if (yaEnCarrito + cantidad > disponible)
-      return { ok: false, mensaje: "Solo quedan " + disponible + " unidades en esa talla." };
+    if (yaEnCarrito + cantidad > disponible) {
+      const lugar = Datos.llevaTalla(p) ? " en esa talla" : "";
+      return { ok: false, mensaje: yaEnCarrito > 0
+        ? "Ya tienes " + yaEnCarrito + " en el carrito y solo hay " + disponible + " unidades" + lugar + "."
+        : "Solo hay " + disponible + " unidades" + lugar + "." };
+    }
 
     if (linea) linea.cantidad += cantidad;
     else lineas.push({ id: p.id, talla: t, cantidad });

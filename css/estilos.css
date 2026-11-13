@@ -231,3 +231,107 @@ a { color: var(--pasto-oscuro); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* ==========================================================================
+   Páginas interiores: catálogo y detalle de producto
+   ========================================================================== */
+.gs-pagina { padding: 1.5rem 0 4.5rem; }
+.gs-migas ol { list-style: none; display: flex; flex-wrap: wrap; gap: .1rem .4rem; padding: 0; margin: 0 0 1.25rem; font-size: .88rem; color: var(--gris); }
+.gs-migas li + li::before { content: "/"; margin-right: .4rem; color: #9CA3AF; }
+.gs-migas a { color: var(--gris); text-underline-offset: .2em; }
+.gs-migas a:hover { color: var(--carbon); }
+.gs-migas [aria-current] { color: var(--carbon); font-weight: 600; }
+.gs-titulo-pagina { font-family: var(--fuente-titulo); font-weight: 800; font-style: italic; text-transform: uppercase;
+  font-size: clamp(2.8rem, 7vw, 5rem); line-height: .92; margin: 0 0 .6rem; }
+.gs-titulo-pagina--producto { font-size: clamp(2.4rem, 5vw, 3.8rem); }
+.gs-pagina__texto { max-width: 60ch; color: var(--gris); margin-bottom: 1.5rem; }
+
+/* Acceso rápido a categorías */
+.gs-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.gs-chip { min-height: 42px; padding: .4rem 1.1rem; border: 2px solid var(--carbon); border-radius: 999px; background: #fff; color: var(--carbon);
+  font: 600 .92rem var(--fuente-texto); cursor: pointer; transition: background-color .15s, color .15s; }
+.gs-chip:hover { background: var(--neblina); }
+.gs-chip[aria-pressed="true"] { background: var(--carbon); color: #fff; }
+
+/* Filtros */
+.gs-filtros__titulo { font-family: var(--fuente-titulo); font-weight: 700; font-size: 1.7rem; margin: 0 0 .75rem; }
+.gs-filtro { border: 0; border-top: 1px solid var(--linea); padding: 1rem 0 1.15rem; margin: 0; min-width: 0; }
+.gs-filtro legend { padding: 0; margin: 0 0 .6rem; font-size: .95rem; font-weight: 600; }
+.gs-opcion { display: flex; align-items: center; gap: .65rem; padding: .3rem 0; font-size: .95rem; cursor: pointer; }
+.gs-opcion input { width: 1.15rem; height: 1.15rem; margin: 0; accent-color: var(--pasto-oscuro); flex: none; }
+.gs-precio { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+.gs-precio label { display: block; font-size: .85rem; color: var(--gris); margin-bottom: .2rem; }
+.gs-precio input, .gs-barra input[type=search], .gs-barra select { width: 100%; min-height: 46px; padding: .5rem .75rem; border: 1.5px solid #8A94A3; border-radius: var(--radio);
+  background: #fff; color: var(--carbon); font: inherit; }
+.gs-precio input:focus, .gs-barra input:focus, .gs-barra select:focus { border-color: var(--pasto-oscuro); }
+.gs-filtro__msg { margin: .5rem 0 0; font-size: .85rem; color: #B91C1C; }
+.gs-filtro__msg:empty { display: none; }
+
+/* Barra de búsqueda y orden */
+.gs-barra { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin-bottom: 1rem; }
+.gs-barra__buscar { flex: 1 1 14rem; }
+.gs-barra__orden { display: flex; align-items: center; gap: .5rem; flex: 0 1 auto; }
+.gs-barra__orden label { font-size: .9rem; color: var(--gris); white-space: nowrap; }
+.gs-barra__orden select { width: auto; min-width: 12.5rem; }
+@media (max-width: 575.98px) { .gs-barra__orden { flex: 1 1 100%; } .gs-barra__orden select { flex: 1; } }
+
+.gs-etiquetas { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: .75rem; }
+.gs-etiquetas:empty { display: none; }
+.gs-etiqueta { padding: .3rem .8rem; border: 1px solid var(--linea); border-radius: 999px; background: var(--neblina); color: var(--carbon);
+  font: 500 .85rem var(--fuente-texto); cursor: pointer; }
+.gs-etiqueta:hover { background: var(--linea); }
+.gs-conteo { margin: 0 0 1rem; font-size: .92rem; color: var(--gris); }
+
+.gs-vacio { padding: 3rem 1.5rem; border: 2px dashed var(--linea); border-radius: 6px; }
+.gs-vacio[hidden] { display: none; }
+.gs-vacio h1, .gs-vacio h2 { font-family: var(--fuente-titulo); font-weight: 700; font-size: 2rem; margin: 0 0 .5rem; }
+.gs-vacio p { max-width: 46ch; color: var(--gris); margin-bottom: 1.25rem; }
+
+/* Tarjeta completa (catálogo) */
+.gs-producto__desc { margin: 0 0 .5rem; font-size: .88rem; line-height: 1.45; color: var(--gris);
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.gs-producto__tallas { margin: 0 0 .35rem; font-size: .85rem; }
+.gs-disp { display: flex; align-items: center; gap: .45rem; margin: 0 0 .25rem; font-size: .85rem; font-weight: 600; }
+.gs-disp__punto { width: 9px; height: 9px; border-radius: 50%; background: currentColor; flex: none; }
+.gs-disp--disponible { color: var(--pasto-oscuro); }
+.gs-disp--ultimas { color: #92400E; }
+.gs-disp--agotado { color: #B91C1C; }
+
+/* Detalle de producto */
+.gs-detalle__foto { background: var(--neblina); border-radius: 6px; overflow: hidden; }
+.gs-detalle__foto img { display: block; width: 100%; height: auto; }
+@media (min-width: 768px) { .gs-detalle__foto { position: sticky; top: 5.5rem; } }
+.gs-detalle__precio { font-family: var(--fuente-titulo); font-weight: 700; font-size: 2.7rem; line-height: 1; color: var(--pasto-oscuro); margin: .5rem 0 .75rem; }
+.gs-detalle__desc { max-width: 52ch; margin: 1rem 0 1.5rem; }
+.gs-tallas { border: 0; padding: 0; margin: 0 0 1.25rem; min-width: 0; }
+.gs-tallas legend { padding: 0; margin: 0 0 .6rem; font-size: .95rem; font-weight: 600; }
+.gs-tallas__lista { display: flex; flex-wrap: wrap; gap: .5rem; }
+.gs-talla { display: inline-flex; align-items: center; justify-content: center; min-width: 58px; height: 50px; padding: 0 .9rem;
+  border: 2px solid var(--carbon); border-radius: var(--radio); font-weight: 600; cursor: pointer; transition: background-color .15s, color .15s; }
+.gs-talla:hover { background: var(--neblina); }
+input:checked + .gs-talla { background: var(--carbon); color: #fff; }
+input:focus-visible + .gs-talla { outline: 3px solid var(--pasto-oscuro); outline-offset: 3px; }
+input:disabled + .gs-talla { border-color: var(--linea); background: #fff; color: #8A94A3; text-decoration: line-through; cursor: not-allowed; }
+.gs-tallas__msg { margin: .6rem 0 0; font-size: .9rem; color: var(--gris); }
+.gs-cantidad-fila { display: flex; align-items: center; gap: 1rem; margin-bottom: .75rem; }
+.gs-cantidad-fila label { font-size: .95rem; font-weight: 600; }
+.gs-cantidad { display: inline-flex; border: 2px solid var(--carbon); border-radius: var(--radio); overflow: hidden; }
+.gs-cantidad button { width: 46px; height: 46px; border: 0; background: #fff; font-size: 1.35rem; line-height: 1; cursor: pointer; }
+.gs-cantidad button:hover { background: var(--neblina); }
+.gs-cantidad input { width: 62px; border: 0; border-inline: 2px solid var(--carbon); text-align: center; font: 600 1rem var(--fuente-texto); -moz-appearance: textfield; appearance: textfield; }
+.gs-cantidad input::-webkit-outer-spin-button, .gs-cantidad input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.gs-detalle__msg { min-height: 1.6rem; margin: .25rem 0 .75rem; font-size: .92rem; font-weight: 500; }
+.gs-detalle__msg--ok { color: var(--pasto-oscuro); }
+.gs-detalle__msg--error { color: #B91C1C; }
+.gs-detalle__acciones { display: flex; flex-wrap: wrap; gap: .75rem; }
+.gs-btn--grande { min-height: 54px; padding: .8rem 1.8rem; font-size: 1rem; }
+.gs-detalle__datos { list-style: none; margin: 1.75rem 0 0; padding: 1.1rem 0 0; border-top: 1px solid var(--linea); font-size: .92rem; color: var(--gris); }
+.gs-detalle__datos li { padding: .2rem 0; }
+.gs-guia { margin-top: 1.1rem; border-top: 1px solid var(--linea); }
+.gs-guia__boton { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 1rem 0; border: 0; background: none;
+  font: 600 .95rem var(--fuente-texto); color: var(--carbon); text-align: left; cursor: pointer; }
+.gs-guia__boton::after { content: "+"; font-size: 1.4rem; font-weight: 400; line-height: 1; }
+.gs-guia__boton[aria-expanded="true"]::after { content: "−"; }
+.gs-guia__cuerpo { padding-bottom: 1rem; font-size: .92rem; }
+.gs-tabla { max-width: 26rem; margin-bottom: .75rem; }
+.gs-guia__nota { margin: 0; font-size: .82rem; color: var(--gris); }

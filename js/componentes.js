@@ -126,7 +126,7 @@ const Ui = (() => {
   }
 
   /* ---------- Tarjeta de producto ---------- */
-  function tarjeta(p) {
+  function tarjeta(p, completa = false) {
     const est = Datos.estado(p);
     const agotado = est.clave === "agotado";
     const sinTalla = !Datos.llevaTalla(p);
@@ -137,6 +137,15 @@ const Ui = (() => {
     if (agotado) accion = `<span class="gs-btn gs-btn--fantasma disabled" aria-disabled="true">Agotado</span>`;
     else if (sinTalla) accion = `<button type="button" class="gs-btn gs-btn--oscuro" data-agregar="${p.id}">Agregar al carrito</button>`;
     else accion = `<a class="gs-btn gs-btn--oscuro" href="${detalle}">Elegir talla</a>`;
+    // Versión completa (catálogo): descripción, tallas con stock y disponibilidad
+    let extra = "";
+    if (completa) {
+      const tallas = Datos.tallasDe(p).filter(t => Datos.stockTalla(p, t) > 0);
+      extra = `
+        <p class="gs-producto__desc">${esc(p.descripcion)}</p>
+        ${tallas.length ? `<p class="gs-producto__tallas">Tallas: ${tallas.map(esc).join(", ")}</p>` : ""}
+        <p class="gs-disp gs-disp--${est.clave}"><span class="gs-disp__punto" aria-hidden="true"></span>${esc(est.texto)}</p>`;
+    }
     return `
     <article class="gs-producto${agotado ? " gs-producto--agotado" : ""}">
       <a class="gs-producto__foto" href="${detalle}" tabindex="-1" aria-hidden="true">
@@ -145,7 +154,7 @@ const Ui = (() => {
       </a>
       <div class="gs-producto__cuerpo">
         <p class="gs-producto__cat">${esc(Datos.nombreCategoria(p.categoria))}</p>
-        <h3 class="gs-producto__nombre"><a href="${detalle}">${esc(p.nombre)}</a></h3>
+        <h3 class="gs-producto__nombre"><a href="${detalle}">${esc(p.nombre)}</a></h3>${extra}
         <p class="gs-producto__precio">${formatoPrecio(p.precio)}</p>
         ${accion}
       </div>
