@@ -134,7 +134,7 @@
 
         <ul class="gs-detalle__datos">
           <li>Envío a todo Honduras en 2 a 5 días hábiles. Gratis desde L 2,000.</li>
-          <li>Cambios por 15 días si la talla no te queda.</li>
+          <li>${lleva ? "Cambios por 15 días si la talla no te queda." : "Cambios por 15 días si el producto llega con defectos."}</li>
           <li>Precios en lempiras (L), con impuestos incluidos.</li>
         </ul>
         ${guiaTallas()}
