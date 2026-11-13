@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Goleada Sport | Tienda de fútbol y running en Honduras</title>
+  <meta name="description" content="Compra botines, balones, tenis y ropa deportiva en línea. Envíos a todo Honduras, pago seguro y atención con asistente virtual.">
+  <meta name="theme-color" content="#076B38">
+  <link rel="canonical" href="https://brunoaleman19.github.io/goleada-sport/">
+  <link rel="icon" type="image/svg+xml" href="img/icono.svg">
+  <link rel="apple-touch-icon" href="img/icono.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_HN">
+  <meta property="og:site_name" content="Goleada Sport">
+  <meta property="og:title" content="Goleada Sport | Equípate para ganar">
+  <meta property="og:description" content="Fútbol y running en línea, con envíos a todo Honduras.">
+  <meta property="og:url" content="https://brunoaleman19.github.io/goleada-sport/">
+  <meta property="og:image" content="https://brunoaleman19.github.io/goleada-sport/img/banner-inicio.jpg">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Goleada Sport",
+    "description": "Tienda en línea de artículos de fútbol y running en Honduras.",
+    "url": "https://brunoaleman19.github.io/goleada-sport/",
+    "logo": "https://brunoaleman19.github.io/goleada-sport/img/logo.png",
+    "email": "contacto@goleadasport.hn",
+    "address": { "@type": "PostalAddress", "addressLocality": "San Pedro Sula", "addressCountry": "HN" },
+    "currenciesAccepted": "HNL"
+  }
+  </script>
+</head>
+
+<body data-pagina="inicio">
+  <header id="app-header"></header>
+
+  <main id="contenido">
+
+    <!-- Banner principal -->
+    <section class="gs-hero" aria-labelledby="hero-titulo">
+      <img class="gs-hero__foto" src="img/banner-inicio.jpg" width="1920" height="1280" fetchpriority="high"
+           alt="Cancha de fútbol con pasto recién cortado y un arco al fondo, entre árboles de otoño">
+      <div class="container gs-hero__contenido">
+        <h1 id="hero-titulo" class="gs-display"><span>Equípate</span><span class="gs-display__2">para ganar.</span></h1>
+        <p class="gs-hero__texto">Botines, balones y tenis para la cancha y la pista, con envío a todo Honduras.</p>
+        <div class="gs-hero__acciones">
+          <a class="gs-btn gs-btn--amarillo" href="catalogo.html">Ver catálogo</a>
+          <a class="gs-btn gs-btn--borde-claro" href="#promociones">Ver promociones</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compra por deporte -->
+    <section class="gs-seccion" aria-labelledby="titulo-deportes">
+      <div class="container">
+        <div class="gs-cabecera">
+          <h2 id="titulo-deportes" class="gs-titulo">Compra por deporte</h2>
+        </div>
+        <div class="row g-3 g-lg-4">
+          <div class="col-lg-6">
+            <div class="gs-deporte gs-deporte--futbol">
+              <div class="gs-deporte__texto">
+                <h3 class="gs-deporte__titulo">Fútbol</h3>
+                <div>
+                  <ul class="gs-deporte__lista">
+                    <li><a href="catalogo.html?categoria=calzado-futbol">Calzado de fútbol</a></li>
+                    <li><a href="catalogo.html?categoria=equipamiento-futbol">Equipamiento de fútbol</a></li>
+                  </ul>
+                  <a class="gs-btn gs-btn--amarillo" href="catalogo.html?deporte=futbol">Ver todo el fútbol</a>
+                </div>
+              </div>
+              <div class="gs-deporte__foto">
+                <img src="img/productos/botines-striker-classic.jpg" loading="lazy" width="1000" height="667"
+                     alt="Botines naranjas sobre la esquina marcada de una cancha">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="gs-deporte gs-deporte--running">
+              <div class="gs-deporte__texto">
+                <h3 class="gs-deporte__titulo">Running</h3>
+                <div>
+                  <ul class="gs-deporte__lista">
+                    <li><a href="catalogo.html?categoria=calzado-running">Calzado de running</a></li>
+                    <li><a href="catalogo.html?categoria=ropa-accesorios-running">Ropa y accesorios</a></li>
+                  </ul>
+                  <a class="gs-btn gs-btn--amarillo" href="catalogo.html?deporte=running">Ver todo el running</a>
+                </div>
+              </div>
+              <div class="gs-deporte__foto">
+                <img src="img/productos/tenis-trail-max.jpg" loading="lazy" width="1000" height="800"
+                     alt="Tenis de running blancos con naranja suspendidos en el aire">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Productos destacados -->
+    <section class="gs-seccion gs-seccion--neblina" aria-labelledby="titulo-destacados">
+      <div class="container">
+        <div class="gs-cabecera">
+          <h2 id="titulo-destacados" class="gs-titulo">Productos destacados</h2>
+          <a class="gs-enlace" href="catalogo.html">Ver todo el catálogo</a>
+        </div>
+        <div class="row row-cols-2 row-cols-lg-4 g-3 g-lg-4" id="destacados">
+          <noscript><p class="col-12">Activa JavaScript para ver los productos.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promociones -->
+    <section class="gs-seccion" id="promociones" aria-labelledby="titulo-promos">
+      <div class="container">
+        <div class="gs-cabecera">
+          <h2 id="titulo-promos" class="gs-titulo">Promociones</h2>
+        </div>
+        <div class="row g-3 g-lg-4">
+          <div class="col-lg-6">
+            <div class="gs-promo gs-promo--ticket">
+              <h3 class="gs-promo__titulo">10% menos en tu primera compra</h3>
+              <p class="gs-promo__texto">Escribe el código al pagar y el descuento se aplica al total del carrito.</p>
+              <div class="gs-codigo">
+                <span class="gs-codigo__valor" aria-label="Código GOLEADA10">GOLEADA10</span>
+                <button type="button" class="gs-btn gs-btn--oscuro" data-copiar="GOLEADA10">Copiar código</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="gs-promo gs-promo--running gs-oscuro">
+              <div class="gs-promo__cuerpo">
+                <h3 class="gs-promo__titulo">Running desde L 1,550</h3>
+                <p class="gs-promo__texto">Tenis para la calle, la pista y el trail.</p>
+                <div><a class="gs-btn gs-btn--amarillo" href="catalogo.html?categoria=calzado-running">Ver tenis de running</a></div>
+              </div>
+              <div class="gs-promo__foto">
+                <img src="img/productos/tenis-runner-air.jpg" loading="lazy" width="800" height="1000" alt="Tenis de running color lima con suela blanca">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="pb-5" id="beneficios" aria-labelledby="titulo-beneficios">
+      <div class="container">
+        <h2 id="titulo-beneficios" class="visually-hidden">Por qué comprar en Goleada Sport</h2>
+        <div class="gs-beneficios">
+          <div class="gs-beneficio">
+            <svg class="gs-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.5h11v9h-11z"/><path d="M13.5 9.5h4l3 3v3h-7"/><circle cx="7" cy="17" r="1.8"/><circle cx="17" cy="17" r="1.8"/></svg>
+            <h3>Envío a todo Honduras</h3>
+            <p>Entrega en 2 a 5 días hábiles. Gratis desde L 2,000.</p>
+          </div>
+          <div class="gs-beneficio">
+            <svg class="gs-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 2.5v5.7c0 4.2-2.7 7.4-7 9.3-4.3-1.9-7-5.1-7-9.3V5.5L12 3z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg>
+            <h3>Pago seguro</h3>
+            <p>Tus datos viajan cifrados con HTTPS y no los compartimos.</p>
+          </div>
+          <div class="gs-beneficio">
+            <svg class="gs-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9a8 8 0 0 1 14-3l2 2"/><path d="M20 4v4h-4"/><path d="M20 15a8 8 0 0 1-14 3l-2-2"/><path d="M4 20v-4h4"/></svg>
+            <h3>Cambios por 15 días</h3>
+            <p>Si la talla no te queda, la cambias sin costo.</p>
+          </div>
+          <div class="gs-beneficio">
+            <svg class="gs-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5z"/><path d="M8.5 9.5h7M8.5 12.5h4"/></svg>
+            <h3>Atención en línea</h3>
+            <p>Pregunta por tallas, envíos y pagos al asistente de Goleada.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Suscripción -->
+    <section class="gs-newsletter" id="suscripcion" aria-labelledby="titulo-news">
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-6">
+            <h2 id="titulo-news" class="gs-titulo">Las ofertas llegan primero a tu correo</h2>
+            <p class="gs-newsletter__texto">Suscríbete y te avisamos de nuevos productos y promociones de fútbol y running.</p>
+          </div>
+          <div class="col-lg-6">
+            <form class="gs-form" data-newsletter novalidate>
+              <label class="visually-hidden" for="correo-news">Correo electrónico</label>
+              <input type="email" id="correo-news" name="correo" placeholder="tucorreo@ejemplo.com" autocomplete="email" maxlength="120" inputmode="email" aria-describedby="msg-news">
+              <button type="submit" class="gs-btn gs-btn--amarillo">Suscribirme</button>
+              <p class="gs-form__msg" id="msg-news" data-mensaje role="status"></p>
+              <p class="gs-form__nota">Solo usamos tu correo para enviarte novedades. Puedes darte de baja cuando quieras.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="app-footer" class="gs-footer"></footer>
+
+  <script src="js/vendor/bootstrap.bundle.min.js"></script>
+  <script src="data/productos.js"></script>
+  <script src="js/datos.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/componentes.js"></script>
+  <script src="js/inicio.js"></script>
+</body>
+</html>
