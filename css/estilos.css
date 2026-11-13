@@ -335,3 +335,45 @@ input:disabled + .gs-talla { border-color: var(--linea); background: #fff; color
 .gs-guia__cuerpo { padding-bottom: 1rem; font-size: .92rem; }
 .gs-tabla { max-width: 26rem; margin-bottom: .75rem; }
 .gs-guia__nota { margin: 0; font-size: .82rem; color: var(--gris); }
+
+/* ---------- Carrito ---------- */
+.gs-envio-barra { margin: 0 0 1rem; padding: .7rem 1rem; background: var(--neblina); border-left: 4px solid var(--amarillo); font-weight: 600; font-size: .95rem; }
+.gs-envio-barra--ok { border-left-color: var(--pasto); color: var(--pasto-oscuro); }
+.gs-lineas { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--linea); }
+.gs-linea { display: grid; grid-template-columns: 96px 1fr auto auto; gap: .75rem 1.25rem; align-items: center; padding: 1.1rem 0; border-bottom: 1px solid var(--linea); }
+.gs-linea__foto { display: block; background: var(--neblina); border-radius: 4px; overflow: hidden; }
+.gs-linea__foto img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
+.gs-linea__nombre { font-size: 1.05rem; font-weight: 700; margin: 0 0 .15rem; }
+.gs-linea__nombre a { color: var(--carbon); text-decoration: none; }
+.gs-linea__nombre a:hover { text-decoration: underline; }
+.gs-linea__meta { margin: 0; font-size: .9rem; color: var(--gris); }
+.gs-linea__subtotal { margin: 0; min-width: 7rem; text-align: right; font-weight: 700; font-size: 1.05rem; }
+.gs-cantidad--chica button { width: 38px; height: 40px; }
+.gs-cantidad--chica input { width: 48px; }
+.gs-enlace--boton { background: none; border: 0; padding: 0; cursor: pointer; font: inherit; font-size: .9rem; color: var(--pasto-oscuro); text-decoration: underline; }
+.gs-lineas__pie { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1rem; }
+.gs-resumen { position: sticky; top: 5.5rem; padding: 1.5rem; border: 2px solid var(--carbon); border-radius: 6px; background: #fff; }
+.gs-resumen h2 { font-family: var(--fuente-titulo); font-weight: 800; font-style: italic; text-transform: uppercase; font-size: 1.6rem; margin: 0 0 1rem; }
+.gs-resumen__nota { margin: .75rem 0 0; font-size: .85rem; color: var(--gris); }
+.gs-cupon { margin-bottom: 1.25rem; }
+.gs-cupon label { display: block; font-size: .9rem; font-weight: 600; margin-bottom: .35rem; }
+.gs-cupon__fila { display: flex; gap: .5rem; }
+.gs-cupon__fila input { flex: 1; min-width: 0; padding: .55rem .75rem; border: 2px solid var(--linea); border-radius: 4px; text-transform: uppercase; font: inherit; }
+.gs-cupon__fila input:focus { border-color: var(--carbon); outline: 0; }
+.gs-cupon__msg { min-height: 1.3em; margin: .4rem 0 0; font-size: .85rem; }
+.gs-cupon__msg--ok { color: var(--pasto-oscuro); }
+.gs-cupon__msg--error { color: #B42318; }
+.gs-totales { margin: 0 0 1.25rem; }
+.gs-totales__fila { display: flex; justify-content: space-between; gap: 1rem; padding: .4rem 0; }
+.gs-totales__fila dt { font-weight: 400; }
+.gs-totales__fila dd { margin: 0; font-weight: 600; white-space: nowrap; }
+.gs-totales__fila--desc dd { color: var(--pasto-oscuro); }
+.gs-totales__fila--total { margin-top: .4rem; padding-top: .8rem; border-top: 2px solid var(--carbon); font-size: 1.25rem; }
+.gs-totales__fila--total dt, .gs-totales__fila--total dd { font-weight: 800; }
+.gs-totales__fila--isv { font-size: .85rem; color: var(--gris); padding-top: 0; }
+@media (max-width: 575.98px) {
+  .gs-linea { grid-template-columns: 80px 1fr; }
+  .gs-linea .gs-cantidad { grid-column: 2; justify-self: start; }
+  .gs-linea__subtotal { grid-column: 2; text-align: left; }
+  .gs-resumen { position: static; }
+}

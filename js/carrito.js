@@ -80,5 +80,36 @@ const Carrito = (() => {
   const cantidadTotal = () => leer().reduce((s, l) => s + l.cantidad, 0);
   const subtotal = () => lineas().reduce((s, l) => s + l.subtotal, 0);
 
-  return { agregar, actualizar, quitar, vaciar, lineas, cantidadTotal, subtotal };
+  /* ---------- Cupón, envío e ISV ---------- */
+  const ENVIO = 150, ENVIO_GRATIS_DESDE = 2000, TASA_ISV = 0.15;
+  const CLAVE_CUPON = "goleada_cupon";
+  const CUPONES = { GOLEADA10: { porcentaje: 10, texto: "10% de descuento en tu primera compra" } };
+  const redondear = n => Math.round(n * 100) / 100;
+
+  const cuponActivo = () => { try { const c = localStorage.getItem(CLAVE_CUPON); return CUPONES[c] ? c : ""; } catch (e) { return ""; } };
+  function aplicarCupon(codigo) {
+    const c = String(codigo || "").trim().toUpperCase();
+    if (!c) return { ok: false, mensaje: "Escribe un código de descuento." };
+    if (!CUPONES[c]) return { ok: false, mensaje: "Ese código no es válido." };
+    try { localStorage.setItem(CLAVE_CUPON, c); } catch (e) { /* sin almacenamiento */ }
+    window.dispatchEvent(new CustomEvent("carrito:cambio"));
+    return { ok: true, mensaje: "Código aplicado: " + CUPONES[c].texto + "." };
+  }
+  function quitarCupon() {
+    try { localStorage.removeItem(CLAVE_CUPON); } catch (e) { /* sin almacenamiento */ }
+    window.dispatchEvent(new CustomEvent("carrito:cambio"));
+  }
+
+  /** Los precios ya incluyen ISV: el impuesto se muestra desglosado, no se suma. */
+  function resumen() {
+    const sub = subtotal();
+    const cupon = cuponActivo();
+    const descuento = cupon ? redondear(sub * CUPONES[cupon].porcentaje / 100) : 0;
+    const envio = sub === 0 || sub >= ENVIO_GRATIS_DESDE ? 0 : ENVIO;
+    const total = redondear(sub - descuento + envio);
+    const isv = redondear(total - total / (1 + TASA_ISV));
+    return { subtotal: sub, cupon, descuento, envio, total, isv, faltaParaEnvioGratis: sub > 0 && sub < ENVIO_GRATIS_DESDE ? ENVIO_GRATIS_DESDE - sub : 0 };
+  }
+
+  return { agregar, actualizar, quitar, vaciar, lineas, cantidadTotal, subtotal, resumen, aplicarCupon, quitarCupon, ENVIO, ENVIO_GRATIS_DESDE };
 })();

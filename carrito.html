@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carrito de compras | Goleada Sport</title>
+  <meta name="description" content="Revisa los productos de tu carrito en Goleada Sport, cambia cantidades, aplica tu código de descuento y continúa con tu compra.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#076B38">
+  <link rel="canonical" href="https://brunoaleman19.github.io/goleada-sport/carrito.html">
+  <link rel="icon" type="image/svg+xml" href="img/icono.svg">
+  <link rel="apple-touch-icon" href="img/icono.png">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body data-pagina="carrito">
+  <header id="app-header"></header>
+
+  <main id="contenido">
+    <section class="gs-pagina">
+      <div class="container">
+        <nav class="gs-migas" aria-label="Ruta de navegación">
+          <ol>
+            <li><a href="index.html">Inicio</a></li>
+            <li aria-current="page">Carrito</li>
+          </ol>
+        </nav>
+        <h1 class="gs-titulo-pagina">Tu carrito</h1>
+
+        <div id="carrito-vacio" class="gs-vacio" hidden>
+          <h2>Tu carrito está vacío</h2>
+          <p>Todavía no has agregado productos. Explora el catálogo de fútbol y running y encuentra lo que necesitas.</p>
+          <a class="gs-btn gs-btn--verde" href="catalogo.html">Ver el catálogo</a>
+        </div>
+
+        <div class="row g-4 g-lg-5" id="carrito-contenido" hidden>
+          <div class="col-lg-8">
+            <p class="gs-envio-barra" id="envio-barra" role="status"></p>
+            <ul class="gs-lineas" id="lineas"></ul>
+            <div class="gs-lineas__pie">
+              <a class="gs-enlace" href="catalogo.html">Seguir comprando</a>
+              <button type="button" class="gs-enlace gs-enlace--boton" id="vaciar">Vaciar carrito</button>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <aside class="gs-resumen" aria-labelledby="titulo-resumen">
+              <h2 id="titulo-resumen">Resumen del pedido</h2>
+
+              <form class="gs-cupon" id="form-cupon" novalidate>
+                <label for="codigo">Código de descuento</label>
+                <div class="gs-cupon__fila">
+                  <input type="text" id="codigo" name="codigo" autocomplete="off" maxlength="20" placeholder="GOLEADA10">
+                  <button type="submit" class="gs-btn gs-btn--oscuro">Aplicar</button>
+                </div>
+                <p class="gs-cupon__msg" id="msg-cupon" role="status"></p>
+              </form>
+
+              <dl class="gs-totales" id="totales"></dl>
+              <a class="gs-btn gs-btn--verde gs-btn--grande w-100" href="checkout.html">Continuar con la compra</a>
+              <p class="gs-resumen__nota">Pago simulado: es un proyecto académico y no se cobra nada.</p>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="app-footer" class="gs-footer"></footer>
+
+  <script src="js/vendor/bootstrap.bundle.min.js"></script>
+  <script src="data/productos.js"></script>
+  <script src="js/datos.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/componentes.js"></script>
+  <script src="js/carrito-pagina.js"></script>
+</body>
+</html>
