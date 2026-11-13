@@ -377,3 +377,30 @@ input:disabled + .gs-talla { border-color: var(--linea); background: #fff; color
   .gs-linea__subtotal { grid-column: 2; text-align: left; }
   .gs-resumen { position: static; }
 }
+
+/* ---------- Checkout ---------- */
+.gs-bloque { margin: 0 0 1.75rem; padding: 0; border: 0; min-width: 0; }
+.gs-bloque legend { float: none; width: auto; padding: 0 0 .6rem; margin: 0 0 .9rem; border-bottom: 2px solid var(--carbon);
+  font-family: var(--fuente-titulo); font-weight: 800; font-style: italic; text-transform: uppercase; font-size: 1.35rem; display: block; width: 100%; }
+.gs-form__ayuda { font-size: .9rem; color: var(--gris); margin: 0 0 1rem; }
+.gs-campo { margin-bottom: 1rem; }
+.row > .gs-campo { margin-bottom: 0; }
+.gs-campo label { display: block; font-size: .9rem; font-weight: 600; margin-bottom: .3rem; }
+.gs-campo input, .gs-campo select, .gs-campo textarea { width: 100%; padding: .65rem .8rem; border: 2px solid var(--linea); border-radius: 4px; background: #fff; font: inherit; color: var(--carbon); }
+.gs-campo input:focus, .gs-campo select:focus, .gs-campo textarea:focus { border-color: var(--carbon); outline: 0; box-shadow: 0 0 0 3px rgba(250,204,21,.55); }
+.gs-campo [aria-invalid="true"] { border-color: #B42318; }
+.gs-campo__error { min-height: 1.3em; margin: .3rem 0 0; font-size: .85rem; color: #B42318; }
+.gs-campo__error--general { font-weight: 600; margin: 0 0 .75rem; min-height: 0; }
+.gs-mini { list-style: none; margin: 0 0 1rem; padding: 0; }
+.gs-mini__item { display: grid; grid-template-columns: 56px 1fr auto; gap: .75rem; align-items: center; padding: .65rem 0; border-bottom: 1px solid var(--linea); }
+.gs-mini__item img { width: 56px; height: 56px; object-fit: cover; border-radius: 4px; background: var(--neblina); }
+.gs-mini__nombre { margin: 0; font-weight: 700; font-size: .95rem; }
+.gs-mini__meta, .gs-mini__stock { margin: 0; font-size: .85rem; color: var(--gris); }
+.gs-mini__stock { color: var(--pasto-oscuro); font-weight: 600; }
+.gs-mini__precio { margin: 0; font-weight: 700; white-space: nowrap; }
+.gs-confirmacion:focus { outline: 0; }
+.gs-confirmacion__lead { font-size: 1.1rem; max-width: 60ch; margin-bottom: 1.75rem; padding: .9rem 1rem; background: var(--neblina); border-left: 4px solid var(--pasto); }
+.gs-confirmacion__dato { margin: 0 0 .9rem; font-size: .95rem; }
+.gs-confirmacion__acciones { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+.gs-resumen--plano { position: static; }
+@media (max-width: 575.98px) { .gs-mini__item { grid-template-columns: 48px 1fr; } .gs-mini__precio { grid-column: 2; } }

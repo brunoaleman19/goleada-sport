@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finalizar compra | Goleada Sport</title>
+  <meta name="description" content="Completa tus datos de envío y paga tu pedido de Goleada Sport con tarjeta. Pago simulado en un proyecto académico.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#076B38">
+  <link rel="canonical" href="https://brunoaleman19.github.io/goleada-sport/checkout.html">
+  <link rel="icon" type="image/svg+xml" href="img/icono.svg">
+  <link rel="apple-touch-icon" href="img/icono.png">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body data-pagina="carrito">
+  <header id="app-header"></header>
+
+  <main id="contenido">
+    <section class="gs-pagina">
+      <div class="container">
+        <nav class="gs-migas" aria-label="Ruta de navegación">
+          <ol>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="carrito.html">Carrito</a></li>
+            <li aria-current="page">Finalizar compra</li>
+          </ol>
+        </nav>
+        <h1 class="gs-titulo-pagina" id="titulo-checkout">Finalizar compra</h1>
+
+        <div id="checkout-vacio" class="gs-vacio" hidden>
+          <h2>No hay productos para pagar</h2>
+          <p>Tu carrito está vacío. Agrega productos desde el catálogo para continuar con la compra.</p>
+          <a class="gs-btn gs-btn--verde" href="catalogo.html">Ver el catálogo</a>
+        </div>
+
+        <div class="row g-4 g-lg-5" id="checkout-contenido" hidden>
+          <div class="col-lg-7">
+            <form id="form-checkout" novalidate>
+              <p class="gs-form__ayuda">Todos los campos son obligatorios, salvo la nota.</p>
+
+              <fieldset class="gs-bloque">
+                <legend>Contacto</legend>
+                <div class="gs-campo">
+                  <label for="nombre">Nombre completo</label>
+                  <input type="text" id="nombre" name="nombre" autocomplete="name" maxlength="80" aria-describedby="err-nombre">
+                  <p class="gs-campo__error" id="err-nombre"></p>
+                </div>
+                <div class="row g-3">
+                  <div class="col-sm-6 gs-campo">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" autocomplete="tel" inputmode="tel" maxlength="18" placeholder="9999-9999" aria-describedby="err-telefono">
+                    <p class="gs-campo__error" id="err-telefono"></p>
+                  </div>
+                  <div class="col-sm-6 gs-campo">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo" name="correo" autocomplete="email" maxlength="120" aria-describedby="err-correo">
+                    <p class="gs-campo__error" id="err-correo"></p>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="gs-bloque">
+                <legend>Dirección de envío</legend>
+                <div class="row g-3">
+                  <div class="col-sm-6 gs-campo">
+                    <label for="departamento">Departamento</label>
+                    <select id="departamento" name="departamento" autocomplete="address-level1" aria-describedby="err-departamento"></select>
+                    <p class="gs-campo__error" id="err-departamento"></p>
+                  </div>
+                  <div class="col-sm-6 gs-campo">
+                    <label for="ciudad">Ciudad</label>
+                    <input type="text" id="ciudad" name="ciudad" autocomplete="address-level2" maxlength="60" aria-describedby="err-ciudad">
+                    <p class="gs-campo__error" id="err-ciudad"></p>
+                  </div>
+                </div>
+                <div class="gs-campo">
+                  <label for="direccion">Dirección</label>
+                  <input type="text" id="direccion" name="direccion" autocomplete="street-address" maxlength="140" placeholder="Colonia, calle, número de casa y una referencia" aria-describedby="err-direccion">
+                  <p class="gs-campo__error" id="err-direccion"></p>
+                </div>
+                <div class="gs-campo">
+                  <label for="nota">Nota para la entrega (opcional)</label>
+                  <textarea id="nota" name="nota" rows="2" maxlength="200"></textarea>
+                </div>
+              </fieldset>
+
+              <fieldset class="gs-bloque">
+                <legend>Pago con tarjeta</legend>
+                <p class="gs-form__ayuda">Pago simulado: no se cobra nada y los datos de la tarjeta no se guardan. Para la demostración puedes usar la tarjeta de prueba <strong>4242 4242 4242 4242</strong>, cualquier fecha futura y cualquier CVV.</p>
+                <div class="gs-campo">
+                  <label for="tarjeta-nombre">Nombre en la tarjeta</label>
+                  <input type="text" id="tarjeta-nombre" name="tarjeta-nombre" autocomplete="cc-name" maxlength="60" aria-describedby="err-tarjeta-nombre">
+                  <p class="gs-campo__error" id="err-tarjeta-nombre"></p>
+                </div>
+                <div class="gs-campo">
+                  <label for="tarjeta-numero">Número de tarjeta</label>
+                  <input type="text" id="tarjeta-numero" name="tarjeta-numero" autocomplete="cc-number" inputmode="numeric" maxlength="23" placeholder="0000 0000 0000 0000" aria-describedby="err-tarjeta-numero">
+                  <p class="gs-campo__error" id="err-tarjeta-numero"></p>
+                </div>
+                <div class="row g-3">
+                  <div class="col-6 gs-campo">
+                    <label for="tarjeta-vence">Vencimiento</label>
+                    <input type="text" id="tarjeta-vence" name="tarjeta-vence" autocomplete="cc-exp" inputmode="numeric" maxlength="5" placeholder="MM/AA" aria-describedby="err-tarjeta-vence">
+                    <p class="gs-campo__error" id="err-tarjeta-vence"></p>
+                  </div>
+                  <div class="col-6 gs-campo">
+                    <label for="tarjeta-cvv">CVV</label>
+                    <input type="text" id="tarjeta-cvv" name="tarjeta-cvv" autocomplete="cc-csc" inputmode="numeric" maxlength="4" placeholder="123" aria-describedby="err-tarjeta-cvv">
+                    <p class="gs-campo__error" id="err-tarjeta-cvv"></p>
+                  </div>
+                </div>
+              </fieldset>
+
+              <p class="gs-campo__error gs-campo__error--general" id="err-general" role="alert"></p>
+              <button type="submit" class="gs-btn gs-btn--verde gs-btn--grande" id="boton-pagar">Pagar pedido</button>
+            </form>
+          </div>
+
+          <div class="col-lg-5">
+            <aside class="gs-resumen" aria-labelledby="titulo-resumen-pago">
+              <h2 id="titulo-resumen-pago">Tu pedido</h2>
+              <ul class="gs-mini" id="mini-lineas"></ul>
+              <dl class="gs-totales" id="totales"></dl>
+              <a class="gs-enlace" href="carrito.html">Volver al carrito</a>
+            </aside>
+          </div>
+        </div>
+
+        <div id="confirmacion" class="gs-confirmacion" hidden tabindex="-1"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="app-footer" class="gs-footer"></footer>
+
+  <script src="js/vendor/bootstrap.bundle.min.js"></script>
+  <script src="data/productos.js"></script>
+  <script src="js/datos.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/componentes.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>
