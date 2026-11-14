@@ -404,3 +404,14 @@ input:disabled + .gs-talla { border-color: var(--linea); background: #fff; color
 .gs-confirmacion__acciones { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
 .gs-resumen--plano { position: static; }
 @media (max-width: 575.98px) { .gs-mini__item { grid-template-columns: 48px 1fr; } .gs-mini__precio { grid-column: 2; } }
+
+/* ---------- Contacto ---------- */
+.gs-pagina__intro { max-width: 52ch; color: var(--gris); margin: .25rem 0 2rem; font-size: 1.05rem; }
+.gs-campo__pie { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.gs-campo__pie .gs-campo__error { flex: 1; }
+.gs-campo__contador { margin: .3rem 0 0; font-size: .85rem; color: var(--gris); white-space: nowrap; }
+.gs-exito { padding: 2rem 1.5rem; border: 2px solid var(--pasto-oscuro); border-left-width: 8px; border-radius: 6px; background: #fff; }
+.gs-exito[hidden], #form-contacto[hidden] { display: none; }
+.gs-exito:focus { outline: 0; }
+.gs-exito h2 { font-family: var(--fuente-titulo); font-weight: 800; font-style: italic; text-transform: uppercase; font-size: 1.8rem; margin: 0 0 .5rem; }
+.gs-exito p { max-width: 52ch; margin-bottom: 1.25rem; }

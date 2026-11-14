@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto | Goleada Sport</title>
+  <meta name="description" content="Escríbenos a Goleada Sport: resolvemos tus dudas sobre tallas, pedidos, envíos y cambios de calzado y ropa de fútbol y running en Honduras.">
+  <meta name="theme-color" content="#076B38">
+  <link rel="canonical" href="https://brunoaleman19.github.io/goleada-sport/contacto.html">
+  <link rel="icon" type="image/svg+xml" href="img/icono.svg">
+  <link rel="apple-touch-icon" href="img/icono.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_HN">
+  <meta property="og:site_name" content="Goleada Sport">
+  <meta property="og:title" content="Contacto | Goleada Sport">
+  <meta property="og:description" content="Escríbenos y resolvemos tus dudas sobre tallas, pedidos, envíos y cambios.">
+  <meta property="og:image" content="https://brunoaleman19.github.io/goleada-sport/img/banner-inicio.jpg">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body data-pagina="contacto">
+  <header id="app-header"></header>
+
+  <main id="contenido">
+    <section class="gs-pagina">
+      <div class="container">
+        <nav class="gs-migas" aria-label="Ruta de navegación">
+          <ol>
+            <li><a href="index.html">Inicio</a></li>
+            <li aria-current="page">Contacto</li>
+          </ol>
+        </nav>
+        <h1 class="gs-titulo-pagina">Contáctanos</h1>
+        <p class="gs-pagina__intro">¿Dudas con una talla, un pedido o un cambio? Escríbenos y te respondemos en un día hábil.</p>
+
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-7">
+            <form id="form-contacto" novalidate>
+              <p class="gs-form__ayuda">Todos los campos son obligatorios.</p>
+              <div class="gs-campo">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" autocomplete="name" maxlength="80" aria-describedby="err-nombre">
+                <p class="gs-campo__error" id="err-nombre"></p>
+              </div>
+              <div class="gs-campo">
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" autocomplete="email" maxlength="120" aria-describedby="err-correo">
+                <p class="gs-campo__error" id="err-correo"></p>
+              </div>
+              <div class="gs-campo">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="6" maxlength="500" aria-describedby="err-mensaje contador"></textarea>
+                <div class="gs-campo__pie">
+                  <p class="gs-campo__error" id="err-mensaje"></p>
+                  <p class="gs-campo__contador" id="contador" aria-live="off">0 / 500</p>
+                </div>
+              </div>
+              <button type="submit" class="gs-btn gs-btn--verde gs-btn--grande" id="boton-enviar">Enviar mensaje</button>
+            </form>
+
+            <div class="gs-exito" id="exito" hidden tabindex="-1" role="status">
+              <h2>¡Mensaje enviado!</h2>
+              <p id="exito-texto"></p>
+              <button type="button" class="gs-btn gs-btn--borde" id="otro-mensaje">Enviar otro mensaje</button>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <aside class="gs-resumen gs-resumen--plano" aria-labelledby="titulo-datos">
+              <h2 id="titulo-datos">Otras formas de contacto</h2>
+              <p class="gs-confirmacion__dato"><strong>Correo</strong><br><a href="mailto:contacto@goleadasport.hn">contacto@goleadasport.hn</a></p>
+              <p class="gs-confirmacion__dato"><strong>Teléfono y WhatsApp</strong><br><a href="tel:+50425550000">+504 2555-0000</a></p>
+              <p class="gs-confirmacion__dato"><strong>Ubicación</strong><br>San Pedro Sula, Honduras</p>
+              <p class="gs-confirmacion__dato"><strong>Horario de atención</strong><br>Lunes a viernes, de 8:00 a. m. a 5:00 p. m.<br>Sábados, de 8:00 a. m. a 12:00 m.</p>
+              <p class="gs-confirmacion__dato mb-0"><strong>Redes sociales</strong><br>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a> y
+                <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">TikTok</a>: @goleadasport.hn</p>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="app-footer" class="gs-footer"></footer>
+
+  <script src="js/vendor/bootstrap.bundle.min.js"></script>
+  <script src="data/productos.js"></script>
+  <script src="js/datos.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/componentes.js"></script>
+  <script src="js/contacto.js"></script>
+</body>
+</html>
