@@ -249,6 +249,7 @@ const Ui = (() => {
     window.addEventListener("storage", actualizarContador);
     activarNewsletter();
     activarCopiar();
+    if (typeof Golbot !== "undefined") Golbot.iniciar();
   }
 
   return { ICONOS, tarjeta, activarAgregar, aviso, iniciar };
