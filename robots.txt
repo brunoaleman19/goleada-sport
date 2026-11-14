@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brunoaleman19.github.io/goleada-sport/sitemap.xml
