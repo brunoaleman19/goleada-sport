@@ -129,7 +129,7 @@ const Ui = (() => {
     const est = Datos.estado(p);
     const agotado = est.clave === "agotado";
     const sinTalla = !Datos.llevaTalla(p);
-    const detalle = "producto.html?p=" + encodeURIComponent(p.slug);
+    const detalle = "productos/" + encodeURIComponent(p.slug) + ".html";
     const insignia = est.clave === "disponible" ? "" :
       `<span class="gs-insignia gs-insignia--${est.clave}">${esc(est.texto)}</span>`;
     let accion;

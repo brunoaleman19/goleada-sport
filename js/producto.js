@@ -1,6 +1,7 @@
 /*
  * Goleada Sport - Detalle de producto
- * Se abre como producto.html?p=botines-velocity-pro (el "slug" es la URL amigable del producto).
+ * Cada producto tiene su página: productos/botines-velocity-pro.html (el "slug" es la URL amigable).
+ * Los enlaces viejos producto.html?p=<slug> se redirigen a la página nueva.
  * Elegir talla muestra cuántas unidades quedan y limita la cantidad al stock de esa talla.
  */
 (async () => {
@@ -8,8 +9,9 @@
 
   const { esc, formatoPrecio } = Datos;
   const SITIO = "https://brunoaleman19.github.io/goleada-sport/";
-  const slug = new URLSearchParams(location.search).get("p") || "";
+  const slug = document.body.dataset.producto || new URLSearchParams(location.search).get("p") || "";
   const p = Datos.porSlug(slug);
+  if (p && !document.body.dataset.producto) { location.replace("productos/" + encodeURIComponent(p.slug) + ".html"); return; }
   const cont = document.getElementById("detalle");
 
   /* ---------- Producto no encontrado ---------- */
@@ -26,7 +28,7 @@
 
   /* ---------- SEO de esta página ---------- */
   const est = Datos.estado(p);
-  const url = SITIO + "producto.html?p=" + encodeURIComponent(p.slug);
+  const url = SITIO + "productos/" + encodeURIComponent(p.slug) + ".html";
   const imagenAbs = SITIO + p.imagen;
   document.title = p.nombre + " | Goleada Sport";
   const fijar = (sel, attr, valor) => { const el = document.querySelector(sel); if (el) el.setAttribute(attr, valor); };
@@ -43,7 +45,7 @@
     offers: { "@type": "Offer", url, priceCurrency: "HNL", price: p.precio,
       availability: est.clave === "agotado" ? "https://schema.org/OutOfStock" : "https://schema.org/InStock" }
   });
-  document.head.appendChild(datosEstructurados);
+  if (!document.querySelector('script[type="application/ld+json"]')) document.head.appendChild(datosEstructurados);
 
   /* ---------- Migas de pan ---------- */
   document.getElementById("migas").innerHTML = `

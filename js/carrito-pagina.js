@@ -23,11 +23,11 @@
       const k = `data-id="${p.id}" data-talla="${esc(l.talla)}"`;
       return `
       <li class="gs-linea">
-        <a class="gs-linea__foto" href="producto.html?p=${encodeURIComponent(p.slug)}" tabindex="-1" aria-hidden="true">
+        <a class="gs-linea__foto" href="productos/${encodeURIComponent(p.slug)}.html" tabindex="-1" aria-hidden="true">
           <img src="${esc(p.imagen)}" alt="" width="120" height="120" loading="lazy">
         </a>
         <div class="gs-linea__info">
-          <h2 class="gs-linea__nombre"><a href="producto.html?p=${encodeURIComponent(p.slug)}">${esc(p.nombre)}</a></h2>
+          <h2 class="gs-linea__nombre"><a href="productos/${encodeURIComponent(p.slug)}.html">${esc(p.nombre)}</a></h2>
           ${talla}
           <p class="gs-linea__meta">${formatoPrecio(p.precio)} c/u</p>
           <button type="button" class="gs-enlace gs-enlace--boton" data-quitar ${k}>Quitar<span class="visually-hidden"> ${esc(p.nombre)} del carrito</span></button>

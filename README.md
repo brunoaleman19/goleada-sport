@@ -11,7 +11,7 @@ Proyecto final de la clase **Comercio Electrónico** (USAP), docente Ing. Marlon
 | Requisito del proyecto | Dónde está |
 | --- | --- |
 | Página de inicio con marca, logo, banner, menú y productos destacados | `index.html` |
-| Catálogo con imagen, nombre, precio, descripción, categoría y disponibilidad | `catalogo.html`, `producto.html` |
+| Catálogo con imagen, nombre, precio, descripción, categoría y disponibilidad | `catalogo.html`, `productos/` (una página por producto) |
 | Carrito: agregar, quitar, cambiar cantidades, subtotal y total | `carrito.html` |
 | Compra con formulario validado y pago simulado | `checkout.html` |
 | Formulario de contacto (nombre, correo y mensaje) con validación | `contacto.html` |
@@ -51,6 +51,7 @@ Proyecto final de la clase **Comercio Electrónico** (USAP), docente Ing. Marlon
 goleada-sport/
 ├── index.html, catalogo.html, producto.html,
 │   carrito.html, checkout.html, contacto.html
+├── productos/               una página por producto (URL amigable)
 ├── sitemap.xml, robots.txt
 ├── css/
 │   ├── estilos.css          estilos propios (prefijo gs-)

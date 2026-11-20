@@ -15,7 +15,7 @@ const Golbot = (() => {
 
   /* ---------- Utilidades ---------- */
   const norm = s => String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9ñ$.,\s-]/g, " ").replace(/\s+/g, " ").trim();
-  const enlaceProducto = p => `<a href="producto.html?p=${encodeURIComponent(p.slug)}">${esc(p.nombre)}</a>`;
+  const enlaceProducto = p => `<a href="productos/${encodeURIComponent(p.slug)}.html">${esc(p.nombre)}</a>`;
   const enlaceCategoria = (slug, texto) => `<a href="catalogo.html?categoria=${slug}">${esc(texto)}</a>`;
   const CONTACTO = `<a href="contacto.html">página de contacto</a>`;
 
