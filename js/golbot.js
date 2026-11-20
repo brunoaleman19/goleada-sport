@@ -116,7 +116,7 @@ const Golbot = (() => {
       html: "Enviamos a <strong>todo Honduras</strong> en 2 a 5 días hábiles.<br>El envío cuesta <strong>L 150</strong> y es <strong>gratis desde L 2,000</strong> de compra.",
       chips: ["Formas de pago", "Cambios y devoluciones"] })],
     ["pago", /(pago|pagar|tarjeta|efectivo|transferencia|contra entrega|visa|mastercard|metodo|deposito)/, () => ({
-      html: "Por ahora aceptamos <strong>pago con tarjeta</strong>. En esta tienda de demostración el pago es simulado: no se cobra nada y los datos de la tarjeta no se guardan.<br>Los precios ya incluyen el ISV (15%).",
+      html: "Por ahora aceptamos <strong>pago con tarjeta</strong>.<br>Los precios ya incluyen el ISV (15%).",
       chips: ["Envíos", "Código de descuento"] })],
     ["cambio", /(cambio|cambiar|devolucion|devolver|garantia|reembolso|defecto|defectuoso|no me queda|no me sirve|no me quedo)/, () => ({
       html: "Tienes <strong>15 días</strong> para pedir un cambio si la talla no te queda o si el producto llega con defectos. El producto debe estar sin uso y en su empaque original.<br>Escríbenos desde la " + CONTACTO + " para gestionarlo.",

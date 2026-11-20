@@ -215,7 +215,7 @@
           <h2 id="t-datos">Detalles</h2>
           <dl class="gs-totales">${htmlTotales(p.resumen)}</dl>
           <p class="gs-confirmacion__dato"><strong>Envío a</strong><br>${esc(p.cliente.nombre)}<br>${esc(p.envio.direccion)}, ${esc(p.envio.ciudad)}, ${esc(p.envio.departamento)}<br>Tel. ${esc(p.cliente.telefono)}</p>
-          <p class="gs-confirmacion__dato"><strong>Pago</strong><br>${esc(p.pago)} (simulado)</p>
+          <p class="gs-confirmacion__dato"><strong>Pago</strong><br>${esc(p.pago)}</p>
           <p class="gs-confirmacion__dato"><strong>Entrega estimada</strong><br>2 a 5 días hábiles</p>
         </section></div>
       </div>

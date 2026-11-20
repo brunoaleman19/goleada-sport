@@ -102,8 +102,7 @@ const Ui = (() => {
         </div>
       </div>
       <div class="gs-footer__pie">
-        <span>© ${new Date().getFullYear()} Goleada Sport. Proyecto académico de Comercio Electrónico, USAP.</span>
-        <span>Pagos simulados. Los datos de contacto son ficticios.</span>
+        <span>© ${new Date().getFullYear()} Goleada Sport. Todos los derechos reservados.</span>
       </div>
     </div>`;
   }
