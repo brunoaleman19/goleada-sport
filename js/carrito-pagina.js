@@ -23,7 +23,7 @@
       const k = `data-id="${p.id}" data-talla="${esc(l.talla)}"`;
       return `
       <li class="gs-linea">
-        <a class="gs-linea__foto" href="producto.html?p=${encodeURIComponent(p.slug)}">
+        <a class="gs-linea__foto" href="producto.html?p=${encodeURIComponent(p.slug)}" tabindex="-1" aria-hidden="true">
           <img src="${esc(p.imagen)}" alt="" width="120" height="120" loading="lazy">
         </a>
         <div class="gs-linea__info">
